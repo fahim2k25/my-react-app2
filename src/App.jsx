@@ -1,11 +1,12 @@
 import './App.css'
+import Title from './Title'
 
 function App() {
 
   return (
-   <div>
-    <h1>Vanilla Fudge</h1>
-   </div>
+    <div>
+      <Title></Title>
+    </div>
   )
 }
 
