@@ -1,5 +1,6 @@
 import { Suspense, use } from "react"
 import RestUsers from "./RestUsers";
+import Customer from "./Customer";
 
 const fetchRestCustomer = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -21,6 +22,9 @@ export default function Users({ fetchUsers }) {
 
             } </h2>
             <p>Waiting in Queue</p>
+            {
+                customers.map((customer, index) => <Customer id={index} customer={customer}></Customer>)
+            }
         </div>
     )
 }
