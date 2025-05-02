@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import './App.css'
 import Title from './Title'
 import Users from './Users'
@@ -11,7 +12,9 @@ function App() {
   return (
     <div>
       <Title></Title>
-      <Users></Users>
+      <Suspense fallback={<h3>ITS LOADING..........</h3>}>
+        <Users fetchUsers={fetchUsers}></Users>
+      </Suspense>
     </div>
   )
 }
