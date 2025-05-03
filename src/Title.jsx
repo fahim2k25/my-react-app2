@@ -10,6 +10,14 @@ export default function Title() {
         const count = order + 1;
         return setOrder(count);
     }
+    const handleOrderDecrease = () => {
+        const count = order - 1;
+        return setOrder(count);
+    }
+    const handleOrderReset = () => {
+        const count = 0;
+        return setOrder(count);
+    }
 
     return (
         <div className="text-center">
@@ -20,8 +28,8 @@ export default function Title() {
 
                 <h5 className="font-black text-2xl">Order Number: {order}</h5>
                 <button onClick={handleOrderIncrease} className="m-3 p-2 bg-fuchsia-700 text-lg text-black font-semibold rounded-3xl hover:bg-amber-200 hover:cursor-pointer">Add</button>
-                <button className="m-3 p-2 bg-fuchsia-700 text-lg text-black font-semibold rounded-3xl hover:bg-amber-200 hover:cursor-pointer">Subtract</button>
-                <button className="m-3 p-2 bg-fuchsia-700 text-lg text-black font-semibold rounded-3xl hover:bg-amber-200 hover:cursor-pointer">Reset</button>
+                <button onClick={handleOrderDecrease} className="m-3 p-2 bg-fuchsia-700 text-lg text-black font-semibold rounded-3xl hover:bg-amber-200 hover:cursor-pointer">Subtract</button>
+                <button onClick={handleOrderReset} className="m-3 p-2 bg-fuchsia-700 text-lg text-black font-semibold rounded-3xl hover:bg-amber-200 hover:cursor-pointer">Reset</button>
             </section>
         </div>
     )
